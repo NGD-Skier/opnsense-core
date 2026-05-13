@@ -468,10 +468,10 @@
                     c_max = isNaN(Number($("#max_out_bps").val())) ? null : Number($("#max_out_bps").val());
                 }
                 if (c_max) {
-                    chart.config.options.scales.y.min = 0;
+                    chart.config.options.scales.y.beginAtZero = true;
                     chart.config.options.scales.y.max = c_max;
-                } else if (chart.config.options.scales.y.max || chart.config.options.scales.y.min) {
-                    delete chart.config.options.scales.y.min;
+                } else if (chart.config.options.scales.y.max || chart.config.options.scales.y.beginAtZero) {
+                    delete chart.config.options.scales.y.beginAtZero;
                     delete chart.config.options.scales.y.max;
                 }
                 Object.keys(data.interfaces).forEach(function(intf) {
